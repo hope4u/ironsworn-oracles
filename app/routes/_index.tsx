@@ -1,6 +1,8 @@
 import type { V2_MetaFunction } from "@remix-run/cloudflare";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
 import styles from "~/styles/_index.css"
+import { getModules, getMoveCategories } from "~/dataforged";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -13,39 +15,27 @@ export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
+export function loader() {
+  return getMoveCategories()
+}
+
 export default function Index() {
+  const data = useLoaderData<typeof loader>()
   return (
     <div className="container">
       <nav>
-      <ul>
-          <li>
-            <a
-              target="_blank"
-              href="https://remix.run/tutorials/blog"
-              rel="noreferrer"
-            >
-              15m Quickstart Blog Tutorial
-            </a>
+        <ul>
+          {data.moveCategories.map(category => 
+          <li key={category.$id}>
+            <Link to={category.$id}>{category.Name}</Link>
           </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://remix.run/tutorials/jokes"
-              rel="noreferrer"
-            >
-              Deep Dive Jokes App Tutorial
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-              Remix Docs
-            </a>
-          </li>
+          )}
+
         </ul>
       </nav>
       <main>
         <h1>Welcome to Remix</h1>
-        
+        <Outlet />
       </main>
     </div>
   );
