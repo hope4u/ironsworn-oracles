@@ -1,14 +1,18 @@
 import type { V2_MetaFunction } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
-import { Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
+import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
 import styles from "~/styles/_index.css";
-import { getModules, getActiveModule } from "~/dataforged";
+import { getModules, getObjectLink } from "~/dataforged/dataforged";
+import { marked } from "marked";
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Ironsworn:Starforged - Rules" },
+    {
+      name: "description",
+      content: "All rules form Ironsworn:Starforged by Shawn Tomkin",
+    },
   ];
 };
 
@@ -18,7 +22,7 @@ export function links() {
 
 export function loader() {
   const modules = getModules();
-  return json({modules})
+  return json({ modules });
 }
 
 export default function Index() {
@@ -28,12 +32,13 @@ export default function Index() {
       <nav>
         <ul>
           {data.modules.map((module) => (
-            <li key={module.$id}>
-              <Link to={`/${module.$id}`}>{module.Name}</Link>
+            <li key={`nav-{module.$id}`}>
+              <Link to={getObjectLink(module)}>{module.Name}</Link>
             </li>
           ))}
         </ul>
       </nav>
+
       <Outlet />
     </div>
   );

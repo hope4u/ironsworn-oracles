@@ -1,8 +1,8 @@
-import type { V2_MetaFunction } from "@remix-run/cloudflare";
+import { V2_MetaFunction, json } from "@remix-run/cloudflare";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
 import styles from "~/styles/_index.css"
-import { getMoveCategories } from "~/dataforged";
+import { getMoveCategories, getObjectLink } from "~/dataforged/dataforged";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -16,7 +16,8 @@ export function links() {
 }
 
 export function loader() {
-  return getMoveCategories()
+  const moveCategories = getMoveCategories()
+  return json({moveCategories})
 }
 
 export default function Index() {
@@ -27,7 +28,7 @@ export default function Index() {
         <ul>
           {data.moveCategories.map(category => 
           <li key={category.$id}>
-            <Link to={`/${category.$id}`}>{category.Name}</Link>
+            <Link to={getObjectLink(category)}>{category.Name}</Link>
           </li>
           )}
 

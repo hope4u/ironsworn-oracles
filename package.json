@@ -18,6 +18,7 @@
     "cross-env": "^7.0.3",
     "dataforged": "^1.5.3",
     "isbot": "^3.6.8",
+    "jsonpath-plus": "^7.2.0",
     "marked": "^5.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -26,6 +27,7 @@
     "@cloudflare/workers-types": "^3.19.0",
     "@remix-run/dev": "^1.16.1",
     "@remix-run/eslint-config": "^1.16.1",
+    "@types/jsonpath-plus": "^5.0.2",
     "@types/marked": "^5.0.0",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",

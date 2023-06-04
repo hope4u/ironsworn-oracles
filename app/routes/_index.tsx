@@ -1,13 +1,18 @@
 import type { V2_MetaFunction } from "@remix-run/cloudflare";
+import { json } from "@remix-run/cloudflare";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
 
-import styles from "~/styles/_index.css"
-import { getModules, getMoveCategories } from "~/dataforged";
+import styles from "~/styles/_index.css";
+import { getElementId, getModules, getObjectLink } from "~/dataforged/dataforged";
+import { marked } from "marked";
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Ironsworn:Starforged - Rules" },
+    {
+      name: "description",
+      content: "All rules form Ironsworn:Starforged by Shawn Tomkin",
+    },
   ];
 };
 
@@ -16,26 +21,33 @@ export function links() {
 }
 
 export function loader() {
-  return getMoveCategories()
+  const modules = getModules();
+  return json({ modules });
 }
 
 export default function Index() {
-  const data = useLoaderData<typeof loader>()
+  const data = useLoaderData<typeof loader>();
   return (
     <div className="container">
       <nav>
         <ul>
-          {data.moveCategories.map(category => 
-          <li key={category.$id}>
-            <Link to={category.$id}>{category.Name}</Link>
-          </li>
-          )}
-
+          {data.modules.map((module) => (
+            <li key={`nav-{module.$id}`}>
+              <Link to={getObjectLink(module)}>{module.Name}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
+
       <main>
-        <h1>Welcome to Remix</h1>
-        <Outlet />
+        {data.modules.map((module) => (
+          <div
+            key={`main-{module.$id}`}
+            dangerouslySetInnerHTML={{
+              __html: marked.parse(module.Description),
+            }}
+          />
+        ))}
       </main>
     </div>
   );

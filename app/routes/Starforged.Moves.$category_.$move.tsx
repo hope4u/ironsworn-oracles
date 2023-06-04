@@ -1,14 +1,15 @@
 import { json } from "@remix-run/cloudflare";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 
 import type { LoaderArgs } from "@remix-run/cloudflare";
 import { marked } from "marked";
-import { getMove } from "~/dataforged";
+import { getMove } from "~/dataforged/dataforged";
 
 export async function loader({ params }: LoaderArgs) {
   console.log(params)
   if (!params.category || !params.move) throw new Response("Not Found", { status: 404 });
-  return getMove(params.category, params.move);
+  const move = getMove(params.category, params.move);
+  return json({move})
 }
 
 export default function Move() {

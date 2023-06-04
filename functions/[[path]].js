@@ -2047,14 +2047,14 @@ function matchRoutes(routes2, locationArg, basename) {
 function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
   branches === void 0 && (branches = []), parentsMeta === void 0 && (parentsMeta = []), parentPath === void 0 && (parentPath = "");
   let flattenRoute = (route, index, relativePath) => {
-    let meta4 = {
+    let meta5 = {
       relativePath: relativePath === void 0 ? route.path || "" : relativePath,
       caseSensitive: route.caseSensitive === !0,
       childrenIndex: index,
       route
     };
-    meta4.relativePath.startsWith("/") && (invariant(meta4.relativePath.startsWith(parentPath), 'Absolute route path "' + meta4.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta4.relativePath = meta4.relativePath.slice(parentPath.length));
-    let path = joinPaths([parentPath, meta4.relativePath]), routesMeta = parentsMeta.concat(meta4);
+    meta5.relativePath.startsWith("/") && (invariant(meta5.relativePath.startsWith(parentPath), 'Absolute route path "' + meta5.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes."), meta5.relativePath = meta5.relativePath.slice(parentPath.length));
+    let path = joinPaths([parentPath, meta5.relativePath]), routesMeta = parentsMeta.concat(meta5);
     route.children && route.children.length > 0 && (invariant(
       // Our types know better, but runtime JS may not!
       // @ts-expect-error
@@ -2086,7 +2086,7 @@ function explodeOptionalSegments(path) {
   return result.push(...restExploded.map((subpath) => subpath === "" ? required : [required, subpath].join("/"))), isOptional && result.push(...restExploded), result.map((exploded) => path.startsWith("/") && exploded === "" ? "/" : exploded);
 }
 function rankRouteBranches(branches) {
-  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta4) => meta4.childrenIndex), b.routesMeta.map((meta4) => meta4.childrenIndex)));
+  branches.sort((a, b) => a.score !== b.score ? b.score - a.score : compareIndexes(a.routesMeta.map((meta5) => meta5.childrenIndex), b.routesMeta.map((meta5) => meta5.childrenIndex)));
 }
 function computeScore(path, index) {
   let segments = path.split("/"), initialScore = segments.length;
@@ -2110,15 +2110,15 @@ function matchRouteBranch(branch, pathname) {
     routesMeta
   } = branch, matchedParams = {}, matchedPathname = "/", matches = [];
   for (let i = 0; i < routesMeta.length; ++i) {
-    let meta4 = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
-      path: meta4.relativePath,
-      caseSensitive: meta4.caseSensitive,
+    let meta5 = routesMeta[i], end = i === routesMeta.length - 1, remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/", match = matchPath({
+      path: meta5.relativePath,
+      caseSensitive: meta5.caseSensitive,
       end
     }, remainingPathname);
     if (!match)
       return null;
     Object.assign(matchedParams, match.params);
-    let route = meta4.route;
+    let route = meta5.route;
     matches.push({
       // TODO: Can this as be avoided?
       params: matchedParams,
@@ -4286,12 +4286,12 @@ async function callRouteActionRR({
 }
 async function callRouteLoaderRR({
   loadContext,
-  loader: loader6,
+  loader: loader8,
   params,
   request,
   routeId
 }) {
-  let result = await loader6({
+  let result = await loader8({
     request: stripDataParam(stripIndexParam(request)),
     context: loadContext,
     params
@@ -15601,7 +15601,7 @@ var require_react_jsx_dev_runtime_development = __commonJS({
           value: source
         }), Object.freeze && (Object.freeze(element.props), Object.freeze(element)), element;
       };
-      function jsxDEV8(type, config, maybeKey, source, self) {
+      function jsxDEV10(type, config, maybeKey, source, self) {
         {
           var propName, props = {}, key = null, ref = null;
           maybeKey !== void 0 && (checkKeyStringCoercion(maybeKey), key = "" + maybeKey), hasValidKey(config) && (checkKeyStringCoercion(config.key), key = "" + config.key), hasValidRef(config) && (ref = config.ref, warnIfStringRefCannotBeAutoConverted(config, self));
@@ -15748,7 +15748,7 @@ Check the top-level render call using <` + parentName + ">.");
             var typeString;
             type === null ? typeString = "null" : isArray(type) ? typeString = "array" : type !== void 0 && type.$$typeof === REACT_ELEMENT_TYPE ? (typeString = "<" + (getComponentNameFromType(type.type) || "Unknown") + " />", info = " Did you accidentally export a JSX literal instead of a component?") : typeString = typeof type, error("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
           }
-          var element = jsxDEV8(type, props, key, source, self);
+          var element = jsxDEV10(type, props, key, source, self);
           if (element == null)
             return element;
           if (validType) {
@@ -16365,10 +16365,10 @@ function Links() {
   } = useRemixContext(), {
     errors,
     matches: routerMatches
-  } = useDataRouterStateContext(), matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m) => errors[m.route.id]) + 1) : routerMatches, links5 = React3.useMemo(() => getLinksForMatches(matches, routeModules, manifest), [matches, routeModules, manifest]);
+  } = useDataRouterStateContext(), matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m) => errors[m.route.id]) + 1) : routerMatches, links7 = React3.useMemo(() => getLinksForMatches(matches, routeModules, manifest), [matches, routeModules, manifest]);
   return React3.useEffect(() => {
-    links5.some((link) => "imagesizes" in link || "imagesrcset" in link) && logDeprecationOnce(linksWarning);
-  }, [links5]), /* @__PURE__ */ React3.createElement(React3.Fragment, null, links5.map((link) => {
+    links7.some((link) => "imagesizes" in link || "imagesrcset" in link) && logDeprecationOnce(linksWarning);
+  }, [links7]), /* @__PURE__ */ React3.createElement(React3.Fragment, null, links7.map((link) => {
     if (isPageLinkDescriptor(link))
       return /* @__PURE__ */ React3.createElement(PrefetchPageLinks, _extends4({
         key: link.page
@@ -16398,8 +16398,8 @@ function usePrefetchedStylesheets(matches) {
   } = useRemixContext(), [styleLinks, setStyleLinks] = React3.useState([]);
   return React3.useEffect(() => {
     let interrupted = !1;
-    return getStylesheetPrefetchLinks(matches, manifest, routeModules).then((links5) => {
-      interrupted || setStyleLinks(links5);
+    return getStylesheetPrefetchLinks(matches, manifest, routeModules).then((links7) => {
+      interrupted || setStyleLinks(links7);
     }), () => {
       interrupted = !0;
     };
@@ -16439,7 +16439,7 @@ function V1Meta() {
     errors,
     matches: routerMatches,
     loaderData
-  } = useDataRouterStateContext(), location = useLocation(), matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m) => errors[m.route.id]) + 1) : routerMatches, meta4 = {}, parentsData = {};
+  } = useDataRouterStateContext(), location = useLocation(), matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m) => errors[m.route.id]) + 1) : routerMatches, meta5 = {}, parentsData = {};
   for (let match of matches) {
     let routeId = match.route.id, data = loaderData[routeId], params = match.params, routeModule = routeModules[routeId];
     if (routeModule.meta) {
@@ -16455,11 +16455,11 @@ function V1Meta() {
           // TODO: Add link to the docs once they are written
           // + "\n\nTo reference future flags and the v2 meta API, see https://remix.run/file-conventions/remix-config#future-v2-meta."
         );
-      Object.assign(meta4, routeMeta);
+      Object.assign(meta5, routeMeta);
     }
     parentsData[routeId] = data;
   }
-  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, Object.entries(meta4).map(([name, value]) => {
+  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, Object.entries(meta5).map(([name, value]) => {
     if (!value)
       return null;
     if (["charset", "charSet"].includes(name))
@@ -16492,7 +16492,7 @@ function V2Meta() {
     errors,
     matches: routerMatches,
     loaderData
-  } = useDataRouterStateContext(), location = useLocation(), _matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m) => errors[m.route.id]) + 1) : routerMatches, meta4 = [], leafMeta = null, matches = [];
+  } = useDataRouterStateContext(), location = useLocation(), _matches = errors ? routerMatches.slice(0, routerMatches.findIndex((m) => errors[m.route.id]) + 1) : routerMatches, meta5 = [], leafMeta = null, matches = [];
   for (let i = 0; i < _matches.length; i++) {
     let _match = _matches[i], routeId = _match.route.id, data = loaderData[routeId], params = _match.params, routeModule = routeModules[routeId], routeMeta = [], match = {
       id: routeId,
@@ -16518,9 +16518,9 @@ function V2Meta() {
       throw new Error("The `v2_meta` API is enabled in the Remix config, but the route at " + _match.route.path + ` returns an invalid value. In v2, all route meta functions must return an array of meta objects.
 
 To reference the v1 meta function API, see https://remix.run/route/meta`);
-    match.meta = routeMeta, matches[i] = match, meta4 = [...routeMeta], leafMeta = meta4;
+    match.meta = routeMeta, matches[i] = match, meta5 = [...routeMeta], leafMeta = meta5;
   }
-  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta4.flat().map((metaProps) => {
+  return /* @__PURE__ */ React3.createElement(React3.Fragment, null, meta5.flat().map((metaProps) => {
     if (!metaProps)
       return null;
     if ("tagName" in metaProps) {
@@ -16539,12 +16539,12 @@ To reference the v1 meta function API, see https://remix.run/route/meta`);
         charSet: metaProps.charSet
       }) : null;
     if ("script:ld+json" in metaProps) {
-      let json5 = null;
+      let json11 = null;
       try {
-        json5 = JSON.stringify(metaProps["script:ld+json"]);
+        json11 = JSON.stringify(metaProps["script:ld+json"]);
       } catch {
       }
-      return json5 != null && /* @__PURE__ */ React3.createElement("script", {
+      return json11 != null && /* @__PURE__ */ React3.createElement("script", {
         key: "script:ld+json",
         type: "application/ld+json",
         dangerouslySetInnerHTML: {
@@ -17355,7 +17355,7 @@ init_dirname();
 init_filename();
 init_buffer2();
 init_process2();
-var assets_manifest_default = { entry: { module: "/build/entry.client-FQGTPJ6N.js", imports: ["/build/_shared/chunk-62DTWLCP.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-P2O5MTMI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged": { id: "routes/Starforged", parentId: "root", path: "Starforged", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged-327AHF6C.js", imports: ["/build/_shared/chunk-HL7HV7FF.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves": { id: "routes/Starforged.Moves", parentId: "routes/Starforged", path: "Moves", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves-Z7UFMWKL.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves.$category": { id: "routes/Starforged.Moves.$category", parentId: "routes/Starforged.Moves", path: ":category", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves.$category-7TRU7PWP.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves.$category_.$move": { id: "routes/Starforged.Moves.$category_.$move", parentId: "routes/Starforged.Moves", path: ":category/:move", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves.$category_.$move-CJ3FVACX.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-OVWNGISB.js", imports: ["/build/_shared/chunk-HL7HV7FF.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "433a0470", hmr: void 0, url: "/build/manifest-433A0470.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-FQGTPJ6N.js", imports: ["/build/_shared/chunk-62DTWLCP.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-P2O5MTMI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged": { id: "routes/Starforged", parentId: "root", path: "Starforged", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged-QMXFCF5O.js", imports: ["/build/_shared/chunk-HL7HV7FF.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.$module": { id: "routes/Starforged.$module", parentId: "routes/Starforged", path: ":module", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.$module-TURKQOAW.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves": { id: "routes/Starforged.Moves", parentId: "routes/Starforged", path: "Moves", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves-U2K4XGMO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves.$category": { id: "routes/Starforged.Moves.$category", parentId: "routes/Starforged.Moves", path: ":category", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves.$category-5H565KHL.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves.$category_.$move": { id: "routes/Starforged.Moves.$category_.$move", parentId: "routes/Starforged.Moves", path: ":category/:move", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves.$category_.$move-CQFSQQ4K.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged._index": { id: "routes/Starforged._index", parentId: "routes/Starforged", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Starforged._index-D37HFQTS.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DXQ7CWWC.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-HL7HV7FF.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "ac8c6da7", hmr: void 0, url: "/build/manifest-AC8C6DA7.js" };
 
 // node_modules/@remix-run/css-bundle/dist/esm/server.js
 var cssBundleHref = assets_manifest_default.cssBundleHref;
@@ -17436,6 +17436,7 @@ init_dirname();
 init_filename();
 init_buffer2();
 init_process2();
+var import_cloudflare2 = __toESM(require_dist());
 
 // node_modules/marked/lib/marked.esm.js
 init_global();
@@ -17884,11 +17885,11 @@ var Tokenizer = class {
       }, cap[0], this.lexer);
     }
   }
-  reflink(src, links5) {
+  reflink(src, links7) {
     let cap;
     if ((cap = this.rules.inline.reflink.exec(src)) || (cap = this.rules.inline.nolink.exec(src))) {
       let link = (cap[2] || cap[1]).replace(/\s+/g, " ");
-      if (link = links5[link.toLowerCase()], !link) {
+      if (link = links7[link.toLowerCase()], !link) {
         let text = cap[0].charAt(0);
         return {
           type: "text",
@@ -18307,10 +18308,10 @@ var Lexer = class {
   inlineTokens(src, tokens = []) {
     let token, lastToken, cutSrc, maskedSrc = src, match, keepPrevChar, prevChar;
     if (this.tokens.links) {
-      let links5 = Object.keys(this.tokens.links);
-      if (links5.length > 0)
+      let links7 = Object.keys(this.tokens.links);
+      if (links7.length > 0)
         for (; (match = this.tokenizer.rules.inline.reflinkSearch.exec(maskedSrc)) != null; )
-          links5.includes(match[0].slice(match[0].lastIndexOf("[") + 1, -1)) && (maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex));
+          links7.includes(match[0].slice(match[0].lastIndexOf("[") + 1, -1)) && (maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.reflinkSearch.lastIndex));
     }
     for (; (match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null; )
       maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
@@ -18970,7 +18971,14 @@ marked.parse = marked;
 var options = marked.options, setOptions = marked.setOptions, use = marked.use, walkTokens = marked.walkTokens, parseInline = marked.parseInline;
 var parser = Parser.parse, lexer = Lexer.lex;
 
-// app/dataforged.ts
+// app/dataforged/dataforged.ts
+init_global();
+init_dirname();
+init_filename();
+init_buffer2();
+init_process2();
+
+// app/dataforged/starforged.ts
 init_global();
 init_dirname();
 init_filename();
@@ -78823,41 +78831,97 @@ The Adepts serve in place of those advanced systems. They utilize mind-altering 
 // node_modules/dataforged/dist/index-esm.mjs
 var starforged = dataforged_exports;
 
-// app/dataforged.ts
-function getEmementId(id) {
+// app/dataforged/starforged.ts
+var modules = [
+  {
+    $id: "Starforged/Assets",
+    Name: "Asset Types",
+    Display: {
+      Title: "Asset Types"
+    },
+    Description: "List all awayable Assets and their functions",
+    Data: starforged["Asset Types"]
+  },
+  {
+    $id: "Starforged/Encounters",
+    Name: "Encounters",
+    Description: "Display Encounter informations",
+    Data: starforged.Encounters
+  },
+  {
+    $id: "Starforged/Moves",
+    Name: "Move Categories",
+    Description: 'The "meat" of this app, all moves in detail',
+    Data: starforged["Move Categories"]
+  },
+  {
+    $id: "Starforged/Oracles",
+    Name: "Oracle Categories",
+    Description: "All the oracles in one place",
+    Data: starforged["Oracle Categories"]
+  },
+  {
+    $id: "Starforged/Setting_Truths",
+    Name: "Setting Truths",
+    Description: "Read your Setting Truths",
+    Data: starforged["Setting Truths"]
+  }
+];
+
+// app/dataforged/dataforged.ts
+function getElementId(id) {
   var _a, _b;
   return (_b = (_a = id.match(/\/(?<id>\w+)$/)) == null ? void 0 : _a.groups) == null ? void 0 : _b.id;
 }
-function getObjectBaseData(object) {
-  return object.map((element) => ({ $id: element.$id, Name: element.Name }));
+function getObjectLink(object) {
+  return `/${object.$id}`;
 }
-var modules = [
-  { $id: "Starforged/Assets", Name: "Asset Types", Module: starforged["Asset Types"] },
-  { $id: "Starforged/Encounters", Name: "Encounters", Module: starforged.Encounters },
-  { $id: "Starforged/Moves", Name: "Move Categories", Module: starforged["Move Categories"] },
-  { $id: "Starforged/Oracles", Name: "Oracle Categories", Module: starforged["Oracle Categories"] },
-  { $id: "Starforged/Setting_Truths", Name: "Setting Truths", Module: starforged["Setting Truths"] }
-];
+function checkElementId(searchId = "") {
+  return (element) => getElementId(element.$id) === searchId;
+}
+function getObjectBaseData(object) {
+  var _a;
+  return {
+    $id: object.$id,
+    Name: ((_a = object.Display) == null ? void 0 : _a.Title) || object.Name,
+    Description: object.Description,
+    Display: object.Display
+  };
+}
+function getObjects(id, getParent, childAttribut) {
+  let children = getParent(id)[childAttribut];
+  if (!children)
+    throw new Response("Not Found", { status: 404 });
+  return children;
+}
+function getObject(id, getObjects2) {
+  let object = getObjects2().find(checkElementId(id));
+  if (!object)
+    throw new Response("Not Found", { status: 404 });
+  return object;
+}
 function getModules() {
-  return getObjectBaseData(modules);
+  if (!modules)
+    throw new Response("Not Found", { status: 404 });
+  return modules.map(getObjectBaseData);
+}
+function getModule(moduleId = "") {
+  let module = modules.find(checkElementId(moduleId));
+  if (!module)
+    throw new Response("Not Found", { status: 404 });
+  return module;
 }
 function getMoveCategories() {
-  return { moveCategories: getObjectBaseData(starforged["Move Categories"]) };
+  return getObjects("Moves", getModule, "Data");
 }
-function getMoveCategory(categoryId) {
-  let moveCategory = starforged["Move Categories"].find((category) => getEmementId(category.$id) === categoryId);
-  if (!moveCategory)
-    throw new Response("Not Found", { status: 404 });
-  return { moveCategory: { ...moveCategory, Moves: getObjectBaseData(moveCategory.Moves) } };
+function getMoveCategory(categoryId = "") {
+  return getObject(categoryId, getMoveCategories);
+}
+function getMoves(categoryId) {
+  return getObjects("Moves", () => getMoveCategory(categoryId), "Moves");
 }
 function getMove(categoryId, moveId) {
-  let moveCategory = starforged["Move Categories"].find((category) => getEmementId(category.$id) === categoryId);
-  if (!moveCategory)
-    throw new Response("Not Found", { status: 404 });
-  let move = moveCategory.Moves.find((move2) => getEmementId(move2.$id) === moveId);
-  if (!move)
-    throw new Response("Not Found", { status: 404 });
-  return { move };
+  return getObject(moveId, () => getMoves(categoryId));
 }
 
 // app/routes/Starforged.Moves.$category_.$move.tsx
@@ -78865,7 +78929,8 @@ var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime());
 async function loader({ params }) {
   if (console.log(params), !params.category || !params.move)
     throw new Response("Not Found", { status: 404 });
-  return getMove(params.category, params.move);
+  let move = getMove(params.category, params.move);
+  return (0, import_cloudflare2.json)({ move });
 }
 function Move() {
   var _a;
@@ -78873,7 +78938,7 @@ function Move() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("article", { className: "move", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { children: (_a = data.move) == null ? void 0 : _a.Name }, void 0, !1, {
       fileName: "app/routes/Starforged.Moves.$category_.$move.tsx",
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(
@@ -78887,14 +78952,14 @@ function Move() {
       !1,
       {
         fileName: "app/routes/Starforged.Moves.$category_.$move.tsx",
-        lineNumber: 19,
+        lineNumber: 20,
         columnNumber: 9
       },
       this
     )
   ] }, void 0, !0, {
     fileName: "app/routes/Starforged.Moves.$category_.$move.tsx",
-    lineNumber: 17,
+    lineNumber: 18,
     columnNumber: 5
   }, this);
 }
@@ -78910,59 +78975,66 @@ init_dirname();
 init_filename();
 init_buffer2();
 init_process2();
+var import_cloudflare3 = __toESM(require_dist());
 var import_jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime());
 async function loader2({ params }) {
   if (!params.category)
     throw new Response("Not Found", { status: 404 });
-  return getMoveCategory(params.category);
+  let category = getMoveCategory(params.category);
+  return (0, import_cloudflare3.json)({
+    category: {
+      ...getObjectBaseData(category),
+      Moves: category.Moves.map((move) => getObjectBaseData(move))
+    }
+  });
 }
 function MoveCategory() {
   let data = useLoaderData2();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("main", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: data.moveCategory.Name }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: data.category.Name }, void 0, !1, {
       fileName: "app/routes/Starforged.Moves.$category.tsx",
-      lineNumber: 17,
-      columnNumber: 9
+      lineNumber: 27,
+      columnNumber: 13
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(
       "div",
       {
         dangerouslySetInnerHTML: {
-          __html: marked.parse(data.moveCategory.Description)
+          __html: marked.parse(data.category.Description)
         }
       },
       void 0,
       !1,
       {
         fileName: "app/routes/Starforged.Moves.$category.tsx",
-        lineNumber: 18,
-        columnNumber: 9
+        lineNumber: 28,
+        columnNumber: 13
       },
       this
     ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { children: data.moveCategory.Moves.map((move) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Link2, { to: `/${move.$id}`, children: move.Name }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { children: data.category.Moves.map((move) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Link2, { to: getObjectLink(move), children: move.Name }, void 0, !1, {
       fileName: "app/routes/Starforged.Moves.$category.tsx",
-      lineNumber: 26,
-      columnNumber: 15
+      lineNumber: 36,
+      columnNumber: 25
     }, this) }, move.$id, !1, {
       fileName: "app/routes/Starforged.Moves.$category.tsx",
-      lineNumber: 25,
-      columnNumber: 13
+      lineNumber: 35,
+      columnNumber: 21
     }, this)) }, void 0, !1, {
       fileName: "app/routes/Starforged.Moves.$category.tsx",
-      lineNumber: 23,
-      columnNumber: 9
+      lineNumber: 33,
+      columnNumber: 13
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/Starforged.Moves.$category.tsx",
-    lineNumber: 16,
-    columnNumber: 7
+    lineNumber: 26,
+    columnNumber: 9
   }, this);
 }
 
-// app/routes/Starforged.Moves.tsx
-var Starforged_Moves_exports = {};
-__export(Starforged_Moves_exports, {
+// app/routes/Starforged.$module.tsx
+var Starforged_module_exports = {};
+__export(Starforged_module_exports, {
   default: () => Index,
   links: () => links2,
   loader: () => loader3,
@@ -78973,11 +79045,12 @@ init_dirname();
 init_filename();
 init_buffer2();
 init_process2();
+var import_cloudflare4 = __toESM(require_dist());
 
 // app/styles/_index.css
 var index_default = "/build/_assets/_index-RXLRNSWD.css";
 
-// app/routes/Starforged.Moves.tsx
+// app/routes/Starforged.$module.tsx
 var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime()), meta = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
@@ -78985,49 +79058,109 @@ var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime()), meta = () => [
 function links2() {
   return [{ rel: "stylesheet", href: index_default }];
 }
-function loader3() {
-  return getMoveCategories();
+function loader3({ params }) {
+  let module = getModule(params.module);
+  return (0, import_cloudflare4.json)({ module });
 }
 function Index() {
   let data = useLoaderData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { className: "container", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("nav", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("ul", { children: data.moveCategories.map(
-      (category) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Link2, { to: `/${category.$id}`, children: category.Name }, void 0, !1, {
-        fileName: "app/routes/Starforged.Moves.tsx",
-        lineNumber: 30,
-        columnNumber: 13
-      }, this) }, category.$id, !1, {
-        fileName: "app/routes/Starforged.Moves.tsx",
-        lineNumber: 29,
-        columnNumber: 11
-      }, this)
-    ) }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.tsx",
-      lineNumber: 27,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.tsx",
-      lineNumber: 26,
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("main", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { children: data.module.Name }, void 0, !1, {
+      fileName: "app/routes/Starforged.$module.tsx",
+      lineNumber: 29,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Outlet, {}, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.tsx",
-      lineNumber: 36,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(
+      "div",
+      {
+        dangerouslySetInnerHTML: {
+          __html: marked.parse(data.module.Description)
+        }
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/Starforged.$module.tsx",
+        lineNumber: 30,
+        columnNumber: 9
+      },
+      this
+    ),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("ul", { children: data.module.Data.map(
+      (element) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Link2, { to: getObjectLink(element), children: element.Name }, void 0, !1, {
+        fileName: "app/routes/Starforged.$module.tsx",
+        lineNumber: 38,
+        columnNumber: 15
+      }, this) }, element.$id, !1, {
+        fileName: "app/routes/Starforged.$module.tsx",
+        lineNumber: 37,
+        columnNumber: 9
+      }, this)
+    ) }, void 0, !1, {
+      fileName: "app/routes/Starforged.$module.tsx",
+      lineNumber: 35,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
-    fileName: "app/routes/Starforged.Moves.tsx",
-    lineNumber: 25,
+    fileName: "app/routes/Starforged.$module.tsx",
+    lineNumber: 28,
     columnNumber: 5
   }, this);
 }
 
-// app/routes/Starforged.tsx
-var Starforged_exports = {};
-__export(Starforged_exports, {
+// app/routes/Starforged._index.tsx
+var Starforged_index_exports = {};
+__export(Starforged_index_exports, {
   default: () => Index2,
   links: () => links3,
-  loader: () => loader4,
+  loader: () => loader4
+});
+init_global();
+init_dirname();
+init_filename();
+init_buffer2();
+init_process2();
+var import_cloudflare5 = __toESM(require_dist());
+var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime());
+function links3() {
+  return [{ rel: "stylesheet", href: index_default }];
+}
+function loader4({ params }) {
+  let modules2 = getModules().map((module) => getModule(getElementId(module.$id)));
+  return (0, import_cloudflare5.json)({ modules: modules2 });
+}
+function Index2() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("main", { children: data.modules.map(
+    (module) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+      "div",
+      {
+        dangerouslySetInnerHTML: {
+          __html: marked.parse(module.Description)
+        }
+      },
+      "main-{module.$id}",
+      !1,
+      {
+        fileName: "app/routes/Starforged._index.tsx",
+        lineNumber: 24,
+        columnNumber: 7
+      },
+      this
+    )
+  ) }, void 0, !1, {
+    fileName: "app/routes/Starforged._index.tsx",
+    lineNumber: 22,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/Starforged.Moves.tsx
+var Starforged_Moves_exports = {};
+__export(Starforged_Moves_exports, {
+  default: () => Index3,
+  links: () => links4,
+  loader: () => loader5,
   meta: () => meta2
 });
 init_global();
@@ -79035,66 +79168,8 @@ init_dirname();
 init_filename();
 init_buffer2();
 init_process2();
-var import_cloudflare2 = __toESM(require_dist());
-var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime()), meta2 = () => [
-  { title: "New Remix App" },
-  { name: "description", content: "Welcome to Remix!" }
-];
-function links3() {
-  return [{ rel: "stylesheet", href: index_default }];
-}
-function loader4() {
-  let modules2 = getModules();
-  return (0, import_cloudflare2.json)({ modules: modules2 });
-}
-function Index2() {
-  let data = useLoaderData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "container", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("nav", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("ul", { children: data.modules.map(
-      (module) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Link2, { to: `/${module.$id}`, children: module.Name }, void 0, !1, {
-        fileName: "app/routes/Starforged.tsx",
-        lineNumber: 32,
-        columnNumber: 15
-      }, this) }, module.$id, !1, {
-        fileName: "app/routes/Starforged.tsx",
-        lineNumber: 31,
-        columnNumber: 11
-      }, this)
-    ) }, void 0, !1, {
-      fileName: "app/routes/Starforged.tsx",
-      lineNumber: 29,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/Starforged.tsx",
-      lineNumber: 28,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Outlet, {}, void 0, !1, {
-      fileName: "app/routes/Starforged.tsx",
-      lineNumber: 37,
-      columnNumber: 7
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/routes/Starforged.tsx",
-    lineNumber: 27,
-    columnNumber: 5
-  }, this);
-}
-
-// app/routes/_index.tsx
-var index_exports = {};
-__export(index_exports, {
-  default: () => Index3,
-  links: () => links4,
-  loader: () => loader5,
-  meta: () => meta3
-});
-init_global();
-init_dirname();
-init_filename();
-init_buffer2();
-init_process2();
-var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime()), meta3 = () => [
+var import_cloudflare6 = __toESM(require_dist());
+var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime()), meta2 = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
 ];
@@ -79102,49 +79177,180 @@ function links4() {
   return [{ rel: "stylesheet", href: index_default }];
 }
 function loader5() {
-  return getMoveCategories();
+  let moveCategories = getMoveCategories();
+  return (0, import_cloudflare6.json)({ moveCategories });
 }
 function Index3() {
   let data = useLoaderData2();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "container", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("nav", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { children: data.moveCategories.map(
-      (category) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Link2, { to: category.$id, children: category.Name }, void 0, !1, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 30,
+      (category) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Link2, { to: getObjectLink(category), children: category.Name }, void 0, !1, {
+        fileName: "app/routes/Starforged.Moves.tsx",
+        lineNumber: 31,
         columnNumber: 13
       }, this) }, category.$id, !1, {
+        fileName: "app/routes/Starforged.Moves.tsx",
+        lineNumber: 30,
+        columnNumber: 11
+      }, this)
+    ) }, void 0, !1, {
+      fileName: "app/routes/Starforged.Moves.tsx",
+      lineNumber: 28,
+      columnNumber: 9
+    }, this) }, void 0, !1, {
+      fileName: "app/routes/Starforged.Moves.tsx",
+      lineNumber: 27,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/Starforged.Moves.tsx",
+      lineNumber: 37,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/Starforged.Moves.tsx",
+    lineNumber: 26,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/Starforged.tsx
+var Starforged_exports = {};
+__export(Starforged_exports, {
+  default: () => Index4,
+  links: () => links5,
+  loader: () => loader6,
+  meta: () => meta3
+});
+init_global();
+init_dirname();
+init_filename();
+init_buffer2();
+init_process2();
+var import_cloudflare7 = __toESM(require_dist());
+var import_jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime()), meta3 = () => [
+  { title: "Ironsworn:Starforged - Rules" },
+  {
+    name: "description",
+    content: "All rules form Ironsworn:Starforged by Shawn Tomkin"
+  }
+];
+function links5() {
+  return [{ rel: "stylesheet", href: index_default }];
+}
+function loader6() {
+  let modules2 = getModules();
+  return (0, import_cloudflare7.json)({ modules: modules2 });
+}
+function Index4() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { className: "container", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("nav", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("ul", { children: data.modules.map(
+      (module) => /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(Link2, { to: getObjectLink(module), children: module.Name }, void 0, !1, {
+        fileName: "app/routes/Starforged.tsx",
+        lineNumber: 36,
+        columnNumber: 15
+      }, this) }, "nav-{module.$id}", !1, {
+        fileName: "app/routes/Starforged.tsx",
+        lineNumber: 35,
+        columnNumber: 11
+      }, this)
+    ) }, void 0, !1, {
+      fileName: "app/routes/Starforged.tsx",
+      lineNumber: 33,
+      columnNumber: 9
+    }, this) }, void 0, !1, {
+      fileName: "app/routes/Starforged.tsx",
+      lineNumber: 32,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/Starforged.tsx",
+      lineNumber: 42,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/Starforged.tsx",
+    lineNumber: 31,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/_index.tsx
+var index_exports = {};
+__export(index_exports, {
+  default: () => Index5,
+  links: () => links6,
+  loader: () => loader7,
+  meta: () => meta4
+});
+init_global();
+init_dirname();
+init_filename();
+init_buffer2();
+init_process2();
+var import_cloudflare8 = __toESM(require_dist());
+var import_jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime()), meta4 = () => [
+  { title: "Ironsworn:Starforged - Rules" },
+  {
+    name: "description",
+    content: "All rules form Ironsworn:Starforged by Shawn Tomkin"
+  }
+];
+function links6() {
+  return [{ rel: "stylesheet", href: index_default }];
+}
+function loader7() {
+  let modules2 = getModules();
+  return (0, import_cloudflare8.json)({ modules: modules2 });
+}
+function Index5() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("div", { className: "container", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("nav", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("ul", { children: data.modules.map(
+      (module) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(Link2, { to: getObjectLink(module), children: module.Name }, void 0, !1, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 29,
+        lineNumber: 36,
+        columnNumber: 15
+      }, this) }, "nav-{module.$id}", !1, {
+        fileName: "app/routes/_index.tsx",
+        lineNumber: 35,
         columnNumber: 11
       }, this)
     ) }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 27,
+      lineNumber: 33,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 26,
+      lineNumber: 32,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("main", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h1", { children: "Welcome to Remix" }, void 0, !1, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 37,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Outlet, {}, void 0, !1, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 38,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, !0, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)("main", { children: data.modules.map(
+      (module) => /* @__PURE__ */ (0, import_jsx_dev_runtime9.jsxDEV)(
+        "div",
+        {
+          dangerouslySetInnerHTML: {
+            __html: marked.parse(module.Description)
+          }
+        },
+        "main-{module.$id}",
+        !1,
+        {
+          fileName: "app/routes/_index.tsx",
+          lineNumber: 44,
+          columnNumber: 9
+        },
+        this
+      )
+    ) }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 36,
+      lineNumber: 42,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/_index.tsx",
-    lineNumber: 25,
+    lineNumber: 31,
     columnNumber: 5
   }, this);
 }
@@ -79174,6 +79380,22 @@ var assetsBuildDirectory = "public/build", future = { unstable_dev: !1, unstable
     index: void 0,
     caseSensitive: void 0,
     module: Starforged_Moves_category_exports
+  },
+  "routes/Starforged.$module": {
+    id: "routes/Starforged.$module",
+    parentId: "routes/Starforged",
+    path: ":module",
+    index: void 0,
+    caseSensitive: void 0,
+    module: Starforged_module_exports
+  },
+  "routes/Starforged._index": {
+    id: "routes/Starforged._index",
+    parentId: "routes/Starforged",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: Starforged_index_exports
   },
   "routes/Starforged.Moves": {
     id: "routes/Starforged.Moves",
