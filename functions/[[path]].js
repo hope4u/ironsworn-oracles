@@ -17355,7 +17355,7 @@ init_dirname();
 init_filename();
 init_buffer2();
 init_process2();
-var assets_manifest_default = { entry: { module: "/build/entry.client-FQGTPJ6N.js", imports: ["/build/_shared/chunk-62DTWLCP.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-P2O5MTMI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged": { id: "routes/Starforged", parentId: "root", path: "Starforged", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged-QMXFCF5O.js", imports: ["/build/_shared/chunk-HL7HV7FF.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.$module": { id: "routes/Starforged.$module", parentId: "routes/Starforged", path: ":module", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.$module-TURKQOAW.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves": { id: "routes/Starforged.Moves", parentId: "routes/Starforged", path: "Moves", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves-U2K4XGMO.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves.$category": { id: "routes/Starforged.Moves.$category", parentId: "routes/Starforged.Moves", path: ":category", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves.$category-5H565KHL.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.Moves.$category_.$move": { id: "routes/Starforged.Moves.$category_.$move", parentId: "routes/Starforged.Moves", path: ":category/:move", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.Moves.$category_.$move-CQFSQQ4K.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged._index": { id: "routes/Starforged._index", parentId: "routes/Starforged", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Starforged._index-D37HFQTS.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DXQ7CWWC.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-HL7HV7FF.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "ac8c6da7", hmr: void 0, url: "/build/manifest-AC8C6DA7.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-FQGTPJ6N.js", imports: ["/build/_shared/chunk-62DTWLCP.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-P2O5MTMI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged": { id: "routes/Starforged", parentId: "root", path: "Starforged", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged-QMXFCF5O.js", imports: ["/build/_shared/chunk-HL7HV7FF.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.$module": { id: "routes/Starforged.$module", parentId: "routes/Starforged", path: ":module", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.$module-X3KD7CMI.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.$module.$category": { id: "routes/Starforged.$module.$category", parentId: "routes/Starforged.$module", path: ":category", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.$module.$category-C5DRUOHA.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.$module.$category_.$move": { id: "routes/Starforged.$module.$category_.$move", parentId: "routes/Starforged.$module", path: ":category/:move", index: void 0, caseSensitive: void 0, module: "/build/routes/Starforged.$module.$category_.$move-H4WZZIRR.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged.$module._index": { id: "routes/Starforged.$module._index", parentId: "routes/Starforged.$module", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Starforged.$module._index-F7IN4VWW.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-HL7HV7FF.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/Starforged._index": { id: "routes/Starforged._index", parentId: "routes/Starforged", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/Starforged._index-D37HFQTS.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-DXQ7CWWC.js", imports: ["/build/_shared/chunk-BNXCZZ3P.js", "/build/_shared/chunk-HL7HV7FF.js", "/build/_shared/chunk-2UTVSEXM.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, version: "1c970bc3", hmr: void 0, url: "/build/manifest-1C970BC3.js" };
 
 // node_modules/@remix-run/css-bundle/dist/esm/server.js
 var cssBundleHref = assets_manifest_default.cssBundleHref;
@@ -17425,9 +17425,9 @@ function App() {
   }, this);
 }
 
-// app/routes/Starforged.Moves.$category_.$move.tsx
-var Starforged_Moves_category_move_exports = {};
-__export(Starforged_Moves_category_move_exports, {
+// app/routes/Starforged.$module.$category_.$move.tsx
+var Starforged_module_category_move_exports = {};
+__export(Starforged_module_category_move_exports, {
   default: () => Move,
   loader: () => loader
 });
@@ -78924,7 +78924,7 @@ function getMove(categoryId, moveId) {
   return getObject(moveId, () => getMoves(categoryId));
 }
 
-// app/routes/Starforged.Moves.$category_.$move.tsx
+// app/routes/Starforged.$module.$category_.$move.tsx
 var import_jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime());
 async function loader({ params }) {
   if (console.log(params), !params.category || !params.move)
@@ -78937,7 +78937,7 @@ function Move() {
   let data = useLoaderData2();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("article", { className: "move", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { children: (_a = data.move) == null ? void 0 : _a.Name }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.$category_.$move.tsx",
+      fileName: "app/routes/Starforged.$module.$category_.$move.tsx",
       lineNumber: 19,
       columnNumber: 7
     }, this),
@@ -78951,22 +78951,22 @@ function Move() {
       void 0,
       !1,
       {
-        fileName: "app/routes/Starforged.Moves.$category_.$move.tsx",
+        fileName: "app/routes/Starforged.$module.$category_.$move.tsx",
         lineNumber: 20,
         columnNumber: 9
       },
       this
     )
   ] }, void 0, !0, {
-    fileName: "app/routes/Starforged.Moves.$category_.$move.tsx",
+    fileName: "app/routes/Starforged.$module.$category_.$move.tsx",
     lineNumber: 18,
     columnNumber: 5
   }, this);
 }
 
-// app/routes/Starforged.Moves.$category.tsx
-var Starforged_Moves_category_exports = {};
-__export(Starforged_Moves_category_exports, {
+// app/routes/Starforged.$module.$category.tsx
+var Starforged_module_category_exports = {};
+__export(Starforged_module_category_exports, {
   default: () => MoveCategory,
   loader: () => loader2
 });
@@ -78992,7 +78992,7 @@ function MoveCategory() {
   let data = useLoaderData2();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("main", { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: data.category.Name }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.$category.tsx",
+      fileName: "app/routes/Starforged.$module.$category.tsx",
       lineNumber: 27,
       columnNumber: 13
     }, this),
@@ -79006,35 +79006,35 @@ function MoveCategory() {
       void 0,
       !1,
       {
-        fileName: "app/routes/Starforged.Moves.$category.tsx",
+        fileName: "app/routes/Starforged.$module.$category.tsx",
         lineNumber: 28,
         columnNumber: 13
       },
       this
     ),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("ul", { children: data.category.Moves.map((move) => /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(Link2, { to: getObjectLink(move), children: move.Name }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.$category.tsx",
+      fileName: "app/routes/Starforged.$module.$category.tsx",
       lineNumber: 36,
       columnNumber: 25
     }, this) }, move.$id, !1, {
-      fileName: "app/routes/Starforged.Moves.$category.tsx",
+      fileName: "app/routes/Starforged.$module.$category.tsx",
       lineNumber: 35,
       columnNumber: 21
     }, this)) }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.$category.tsx",
+      fileName: "app/routes/Starforged.$module.$category.tsx",
       lineNumber: 33,
       columnNumber: 13
     }, this)
   ] }, void 0, !0, {
-    fileName: "app/routes/Starforged.Moves.$category.tsx",
+    fileName: "app/routes/Starforged.$module.$category.tsx",
     lineNumber: 26,
     columnNumber: 9
   }, this);
 }
 
-// app/routes/Starforged.$module.tsx
-var Starforged_module_exports = {};
-__export(Starforged_module_exports, {
+// app/routes/Starforged.$module._index.tsx
+var Starforged_module_index_exports = {};
+__export(Starforged_module_index_exports, {
   default: () => Index,
   links: () => links2,
   loader: () => loader3,
@@ -79050,7 +79050,7 @@ var import_cloudflare4 = __toESM(require_dist());
 // app/styles/_index.css
 var index_default = "/build/_assets/_index-RXLRNSWD.css";
 
-// app/routes/Starforged.$module.tsx
+// app/routes/Starforged.$module._index.tsx
 var import_jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime()), meta = () => [
   { title: "New Remix App" },
   { name: "description", content: "Welcome to Remix!" }
@@ -79066,7 +79066,7 @@ function Index() {
   let data = useLoaderData2();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("main", { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { children: data.module.Name }, void 0, !1, {
-      fileName: "app/routes/Starforged.$module.tsx",
+      fileName: "app/routes/Starforged.$module._index.tsx",
       lineNumber: 29,
       columnNumber: 7
     }, this),
@@ -79080,26 +79080,70 @@ function Index() {
       void 0,
       !1,
       {
-        fileName: "app/routes/Starforged.$module.tsx",
+        fileName: "app/routes/Starforged.$module._index.tsx",
         lineNumber: 30,
-        columnNumber: 9
+        columnNumber: 11
       },
       this
-    ),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("ul", { children: data.module.Data.map(
-      (element) => /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(Link2, { to: getObjectLink(element), children: element.Name }, void 0, !1, {
+    )
+  ] }, void 0, !0, {
+    fileName: "app/routes/Starforged.$module._index.tsx",
+    lineNumber: 28,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/Starforged.$module.tsx
+var Starforged_module_exports = {};
+__export(Starforged_module_exports, {
+  default: () => Index2,
+  links: () => links3,
+  loader: () => loader4,
+  meta: () => meta2
+});
+init_global();
+init_dirname();
+init_filename();
+init_buffer2();
+init_process2();
+var import_cloudflare5 = __toESM(require_dist());
+var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime()), meta2 = () => [
+  { title: "New Remix App" },
+  { name: "description", content: "Welcome to Remix!" }
+];
+function links3() {
+  return [{ rel: "stylesheet", href: index_default }];
+}
+function loader4({ params }) {
+  let module = getModule(params.module);
+  return (0, import_cloudflare5.json)({ module });
+}
+function Index2() {
+  let data = useLoaderData2();
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "container", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("nav", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("ul", { children: data.module.Data.map(
+      (element) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Link2, { to: getObjectLink(element), children: element.Name }, void 0, !1, {
         fileName: "app/routes/Starforged.$module.tsx",
-        lineNumber: 38,
+        lineNumber: 33,
         columnNumber: 15
       }, this) }, element.$id, !1, {
         fileName: "app/routes/Starforged.$module.tsx",
-        lineNumber: 37,
-        columnNumber: 9
+        lineNumber: 32,
+        columnNumber: 11
       }, this)
     ) }, void 0, !1, {
       fileName: "app/routes/Starforged.$module.tsx",
-      lineNumber: 35,
+      lineNumber: 30,
       columnNumber: 9
+    }, this) }, void 0, !1, {
+      fileName: "app/routes/Starforged.$module.tsx",
+      lineNumber: 29,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Outlet, {}, void 0, !1, {
+      fileName: "app/routes/Starforged.$module.tsx",
+      lineNumber: 38,
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/Starforged.$module.tsx",
@@ -79111,28 +79155,28 @@ function Index() {
 // app/routes/Starforged._index.tsx
 var Starforged_index_exports = {};
 __export(Starforged_index_exports, {
-  default: () => Index2,
-  links: () => links3,
-  loader: () => loader4
+  default: () => Index3,
+  links: () => links4,
+  loader: () => loader5
 });
 init_global();
 init_dirname();
 init_filename();
 init_buffer2();
 init_process2();
-var import_cloudflare5 = __toESM(require_dist());
-var import_jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime());
-function links3() {
+var import_cloudflare6 = __toESM(require_dist());
+var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime());
+function links4() {
   return [{ rel: "stylesheet", href: index_default }];
 }
-function loader4({ params }) {
+function loader5({ params }) {
   let modules2 = getModules().map((module) => getModule(getElementId(module.$id)));
-  return (0, import_cloudflare5.json)({ modules: modules2 });
+  return (0, import_cloudflare6.json)({ modules: modules2 });
 }
-function Index2() {
+function Index3() {
   let data = useLoaderData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("main", { children: data.modules.map(
-    (module) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("main", { children: data.modules.map(
+    (module) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(
       "div",
       {
         dangerouslySetInnerHTML: {
@@ -79151,65 +79195,6 @@ function Index2() {
   ) }, void 0, !1, {
     fileName: "app/routes/Starforged._index.tsx",
     lineNumber: 22,
-    columnNumber: 5
-  }, this);
-}
-
-// app/routes/Starforged.Moves.tsx
-var Starforged_Moves_exports = {};
-__export(Starforged_Moves_exports, {
-  default: () => Index3,
-  links: () => links4,
-  loader: () => loader5,
-  meta: () => meta2
-});
-init_global();
-init_dirname();
-init_filename();
-init_buffer2();
-init_process2();
-var import_cloudflare6 = __toESM(require_dist());
-var import_jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime()), meta2 = () => [
-  { title: "New Remix App" },
-  { name: "description", content: "Welcome to Remix!" }
-];
-function links4() {
-  return [{ rel: "stylesheet", href: index_default }];
-}
-function loader5() {
-  let moveCategories = getMoveCategories();
-  return (0, import_cloudflare6.json)({ moveCategories });
-}
-function Index3() {
-  let data = useLoaderData2();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { className: "container", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("nav", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("ul", { children: data.moveCategories.map(
-      (category) => /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Link2, { to: getObjectLink(category), children: category.Name }, void 0, !1, {
-        fileName: "app/routes/Starforged.Moves.tsx",
-        lineNumber: 31,
-        columnNumber: 13
-      }, this) }, category.$id, !1, {
-        fileName: "app/routes/Starforged.Moves.tsx",
-        lineNumber: 30,
-        columnNumber: 11
-      }, this)
-    ) }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.tsx",
-      lineNumber: 28,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.tsx",
-      lineNumber: 27,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)(Outlet, {}, void 0, !1, {
-      fileName: "app/routes/Starforged.Moves.tsx",
-      lineNumber: 37,
-      columnNumber: 9
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/routes/Starforged.Moves.tsx",
-    lineNumber: 26,
     columnNumber: 5
   }, this);
 }
@@ -79365,21 +79350,29 @@ var assetsBuildDirectory = "public/build", future = { unstable_dev: !1, unstable
     caseSensitive: void 0,
     module: root_exports
   },
-  "routes/Starforged.Moves.$category_.$move": {
-    id: "routes/Starforged.Moves.$category_.$move",
-    parentId: "routes/Starforged.Moves",
+  "routes/Starforged.$module.$category_.$move": {
+    id: "routes/Starforged.$module.$category_.$move",
+    parentId: "routes/Starforged.$module",
     path: ":category/:move",
     index: void 0,
     caseSensitive: void 0,
-    module: Starforged_Moves_category_move_exports
+    module: Starforged_module_category_move_exports
   },
-  "routes/Starforged.Moves.$category": {
-    id: "routes/Starforged.Moves.$category",
-    parentId: "routes/Starforged.Moves",
+  "routes/Starforged.$module.$category": {
+    id: "routes/Starforged.$module.$category",
+    parentId: "routes/Starforged.$module",
     path: ":category",
     index: void 0,
     caseSensitive: void 0,
-    module: Starforged_Moves_category_exports
+    module: Starforged_module_category_exports
+  },
+  "routes/Starforged.$module._index": {
+    id: "routes/Starforged.$module._index",
+    parentId: "routes/Starforged.$module",
+    path: void 0,
+    index: !0,
+    caseSensitive: void 0,
+    module: Starforged_module_index_exports
   },
   "routes/Starforged.$module": {
     id: "routes/Starforged.$module",
@@ -79396,14 +79389,6 @@ var assetsBuildDirectory = "public/build", future = { unstable_dev: !1, unstable
     index: !0,
     caseSensitive: void 0,
     module: Starforged_index_exports
-  },
-  "routes/Starforged.Moves": {
-    id: "routes/Starforged.Moves",
-    parentId: "routes/Starforged",
-    path: "Moves",
-    index: void 0,
-    caseSensitive: void 0,
-    module: Starforged_Moves_exports
   },
   "routes/Starforged": {
     id: "routes/Starforged",
