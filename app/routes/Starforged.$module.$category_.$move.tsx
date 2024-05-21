@@ -1,8 +1,10 @@
+import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import { useLoaderData } from "@remix-run/react";
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from "remark-gfm";
 
-import type { LoaderArgs } from "@remix-run/cloudflare";
-import { marked } from "marked";
+
 import { getMove } from "~/dataforged/dataforged";
 
 export async function loader({ params }: LoaderArgs) {
@@ -17,11 +19,6 @@ export default function Move() {
   return (
     <article className="move">
       <h1>{data.move?.Name}</h1>        
-        <div
-          dangerouslySetInnerHTML={{
-            __html: marked.parse(data.move.Text),
-          }}
-        />
     </article>
   );
 }
